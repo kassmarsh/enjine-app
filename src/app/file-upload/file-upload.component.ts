@@ -15,6 +15,7 @@ export class FileUploadComponent implements OnInit {
 
   ngOnInit() {
   	bsCustomFileInput.init();
+  	localStorage.clear();
   }
 
   onFileLoad(fileLoadedEvent) {
