@@ -8,39 +8,47 @@ import bsCustomFileInput from 'bs-custom-file-input';
 })
 export class FileUploadComponent implements OnInit {
 
-  csvContent: string;
+  csvContent1: string;
+  csvContent2: string;
 
   constructor() { }
 
   ngOnInit() {
   	bsCustomFileInput.init();
-  	
-  	var input = (<HTMLInputElement>document.getElementById("file1"));
-    input.addEventListener("change", function(event) {
-      var files = input.files;
-      var len = files.length;
-
-         if (len) {
-          console.log("Filename: " + files[0].name);
-          console.log("Type: " + files[0].type);
-          console.log("Size: " + files[0].size + " bytes");
-
-         }
-
-     }, false);
   }
 
   onFileLoad(fileLoadedEvent) {
-    const textFromFileLoaded = fileLoadedEvent.target.result;              
-    this.csvContent = textFromFileLoaded;     
-    alert(this.csvContent);
+    const textFromFileLoaded = fileLoadedEvent.target.result;
+    let fileNum = localStorage.getItem('fileNum');
+    if (fileNum == '1') {
+      this.csvContent1 = textFromFileLoaded;
+      localStorage.setItem('file1', this.csvContent1);
+      alert("in 1");
+      alert(this.csvContent1);
+    }
+    else {
+      this.csvContent2 = textFromFileLoaded;
+      localStorage.setItem('file2', this.csvContent2);
+      alert("in 2");
+      alert(this.csvContent2);
+    }   
+
   }
 
-    onFileSelect(input: HTMLInputElement) {
-
-      const files = input.files;
-      var content = this.csvContent;    
-      if (files && files.length) {
+   onFileSelect(input: HTMLInputElement) {
+    const files = input.files;
+    //localStorage.setItem('key', 'value');
+    if (input.id == "file1") {
+      localStorage.setItem('fileNum', '1');
+      alert("here11111");
+      var content = this.csvContent1;
+    }
+    else {
+      localStorage.setItem('fileNum', '2');
+      alert("here22222");
+      var content = this.csvContent2;
+    }
+    if (files && files.length) {
          /*
           console.log("Filename: " + files[0].name);
           console.log("Type: " + files[0].type);
@@ -53,7 +61,7 @@ export class FileUploadComponent implements OnInit {
           fileReader.onload = this.onFileLoad;
 
           fileReader.readAsText(fileToRead, "UTF-8");
-      }
-
     }
+
+   }
 }
