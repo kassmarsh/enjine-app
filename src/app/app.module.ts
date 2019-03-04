@@ -4,18 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
-import { HomeComponent } from './home/home.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const appRoutes: Routes = [
   { path: 'chart', component: ChartComponent, data: { title: 'ETF Files' } },
-  { path: '', component: HomeComponent}
+  { path: '', component: FileUploadComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartComponent,
-    HomeComponent
+    FileUploadComponent
   ],
   imports: [
   	RouterModule.forRoot(
