@@ -24,29 +24,22 @@ export class FileUploadComponent implements OnInit {
     if (fileNum == '1') {
       this.csvContent1 = textFromFileLoaded;
       localStorage.setItem('file1', this.csvContent1);
-      alert("in 1");
-      alert(this.csvContent1);
     }
     else {
       this.csvContent2 = textFromFileLoaded;
       localStorage.setItem('file2', this.csvContent2);
-      alert("in 2");
-      alert(this.csvContent2);
     }   
 
   }
 
    onFileSelect(input: HTMLInputElement) {
     const files = input.files;
-    //localStorage.setItem('key', 'value');
     if (input.id == "file1") {
       localStorage.setItem('fileNum', '1');
-      alert("here11111");
       var content = this.csvContent1;
     }
     else {
       localStorage.setItem('fileNum', '2');
-      alert("here22222");
       var content = this.csvContent2;
     }
     if (files && files.length) {
