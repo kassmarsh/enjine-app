@@ -80,7 +80,7 @@ export class ChartComponent implements OnInit {
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'Holding Number (in csv file)'
+						labelString: 'Holding Name (hover over point to view)'
 					},
 					ticks: {
 						display: false
