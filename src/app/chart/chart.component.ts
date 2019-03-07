@@ -21,9 +21,6 @@ export class ChartComponent implements OnInit {
     //get rid of trailing newlines (had to do this after checking nullness)
     firstFile = firstFile.trim();
     secondFile = secondFile.trim();
-
-    //var fileArray1 = firstFile.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
-    //var fileArray2 = secondFile.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
     
     if (firstFile.split("\n").length > secondFile.split("\n").length) {
     	var biggerFile = firstFile.split("\n");
@@ -105,7 +102,8 @@ export class ChartComponent implements OnInit {
     if (biggerNames.length < smallerNames.length) {
     	for (i = 0; i < smallerNames.length; i++) {
     		if (biggerNames.indexOf(smallerNames[i]) != i) {
-    			biggerNames.splice(i, 0, "0");
+    			biggerNames.splice(i, 0, smallerNames[i]);
+                biggerValues.splice(i, 0, "0");
     		}
     	}
     }
