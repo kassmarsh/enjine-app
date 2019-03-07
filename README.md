@@ -1,6 +1,8 @@
 # EnjineApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
+Application takes two ETF .csv files as input and compares the differences in the "% of market value" columns.
+Differences are shown on a line chart.
 
 ## Development server
 
