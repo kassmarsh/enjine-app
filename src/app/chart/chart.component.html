@@ -1,3 +1,14 @@
-<div class="container">
+<button type="button" class="btn btn-secondary" style="position: fixed; top: 10px; left: 10px; width: 8%" routerLink="" routerLinkActive="active">
+	<span class="button-text">Back</span>
+</button>
+
+<div class="container" id="chartContainer">
   <canvas id="compChart"></canvas>
+</div>
+
+<div class="jumbotron jumbotron-fluid d-none" id="message">
+  <div class = "container">
+    <h1 class="display-4" style="text-align:center">Oops!</h1>
+    <p class="lead" style="text-align:center">You have somehow navigated to this page before uploading ETF files. Please click on the Back button.</p>
+  </div>
 </div>
